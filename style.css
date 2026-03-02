@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: #eaeaea;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #1b1b1b;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #333;
+}
+
+nav {
+    background: #161616;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 1px solid #333;
+}
+
+nav button {
+    background: #282828;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+nav button:hover {
+    background: #3c3c3c;
+}
+
+#content {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.command-block {
+    background: #1b1b1b;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-left: 4px solid #4caf50;
+    border-radius: 6px;
+}
+
+.command-block pre {
+    background: #0d0d0d;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.copy-btn {
+    float: right;
+    margin-top: -8px;
+    background: #4caf50;
+    color: white;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
