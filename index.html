@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linux Command Navigator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigator — Linux & DevOps Commands</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Linux Command Navigator</h1>
-        <p>Your interactive Linux command reference</p>
-    </header>
+<canvas id="matrixCanvas"></canvas>
 
-    <nav id="menu"></nav>
+<header>
+  <h1>Navigator</h1>
+  <p>Linux & DevOps Command Explorer</p>
 
-    <section id="content">
-        <h2>Select a category</h2>
-        <p>Choose a module from the menu to view commands.</p>
-    </section>
+  <nav>
+    <input type="text" id="searchInput" placeholder="Search command or description...">
+    <select id="categoryFilter">
+      <option value="All">All Categories</option>
+      <option value="Basics">Basics</option>
+      <option value="Files">Files & Directories</option>
+      <option value="Networking">Networking</option>
+      <option value="SSH">SSH & Remote</option>
+      <option value="Monitoring">Process & Monitoring</option>
+      <option value="Text">Text & Filters</option>
+      <option value="Security">Security</option>
+      <option value="DevOps">DevOps / Git</option>
+      <option value="HPC">HPC / Slurm</option>
+    </select>
+  </nav>
+</header>
 
-    <script src="commands.js"></script>
+<main id="commandsContainer">
+  <!-- Command cards will be inserted here dynamically -->
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
