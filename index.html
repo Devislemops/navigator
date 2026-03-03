@@ -1,40 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navigator — Linux & DevOps Commands</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linux Navigator — Islem BENMEDDAH</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #6a00ff, #020b1f);
+    color: #ffffff;
+}
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+header h1 {
+    font-size: 3rem;
+}
+nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+nav a:hover {
+    border-bottom: 2px solid #fff;
+}
+section {
+    padding: 60px 20px;
+    background: rgba(0,0,0,0.25);
+    margin: 30px 10%;
+    border-radius: 10px;
+}
+section h2 {
+    color: #c2aaff;
+    margin-bottom: 15px;
+}
+ul li {
+    margin-bottom: 10px;
+}
+.command {
+    background: rgba(255,255,255,0.05);
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-left: 4px solid #a58bff;
+    font-family: monospace;
+}
+.example {
+    background: rgba(255,255,255,0.08);
+    padding: 5px 10px;
+    margin: 3px 0 10px 0;
+    border-left: 4px solid #fff;
+}
+</style>
 </head>
 <body>
-
 <canvas id="matrixCanvas"></canvas>
 
 <header>
-  <h1>Navigator</h1>
-  <p>Linux & DevOps Command Explorer</p>
-
-  <nav>
-    <input type="text" id="searchInput" placeholder="Search command or description...">
-    <select id="categoryFilter">
-      <option value="All">All Categories</option>
-      <option value="Basics">Basics</option>
-      <option value="Files">Files & Directories</option>
-      <option value="Networking">Networking</option>
-      <option value="SSH">SSH & Remote</option>
-      <option value="Monitoring">Process & Monitoring</option>
-      <option value="Text">Text & Filters</option>
-      <option value="Security">Security</option>
-      <option value="DevOps">DevOps / Git</option>
-      <option value="HPC">HPC / Slurm</option>
-    </select>
-  </nav>
+<h1>Linux Navigator</h1>
+<p>Essential commands for System Admins, DevOps & HPC</p>
+<nav>
+    <a href="#basic">Basic Commands</a>
+    <a href="#files">Files & Archives</a>
+    <a href="#process">Processes</a>
+    <a href="#users">Users & Permissions</a>
+    <a href="#network">Network</a>
+    <a href="#services">System & Services</a>
+    <a href="#storage">Storage & LVM</a>
+    <a href="#security">Security</a>
+    <a href="#logs">Logs & Troubleshooting</a>
+    <a href="#devops">DevOps</a>
+    <a href="#hpc">HPC Commands</a>
+</nav>
 </header>
 
-<main id="commandsContainer">
-  <!-- Command cards will be inserted here dynamically -->
-</main>
+<section id="basic">
+<h2>Basic Commands</h2>
+<ul>
+<li>
+<strong>ls</strong> – list directory contents.
+<div class="example">Example: <span class="command">ls -l /home</span></div>
+</li>
+<li>
+<strong>cd</strong> – change directory.
+<div class="example">Example: <span class="command">cd /var/log</span></div>
+</li>
+<li>
+<strong>pwd</strong> – print working directory.
+<div class="example">Shows the full path of the current directory.</div>
+</li>
+<li>
+<strong>tree</strong> – displays directories and files in tree format.
+<div class="example">Example: <span class="command">tree /etc</span></div>
+</li>
+<li>
+<strong>touch</strong> – create empty files or update timestamps.
+<div class="example">Example: <span class="command">touch newfile.txt</span></div>
+</li>
+<li>
+<strong>mkdir</strong> – create directories.
+<div class="example">Example: <span class="command">mkdir /tmp/testdir</span></div>
+</li>
+<li>
+<strong>rm</strong> – remove files or directories.
+<div class="example">Example: <span class="command">rm oldfile.txt</span></div>
+</li>
+<li>
+<strong>cp</strong> – copy files or directories.
+<div class="example">Example: <span class="command">cp file1.txt /tmp/</span></div>
+</li>
+<li>
+<strong>mv</strong> – move or rename files/directories.
+<div class="example">Example: <span class="command">mv file1.txt file2.txt</span></div>
+</li>
+<li>
+<strong>cat</strong> – display file content.
+<div class="example">Example: <span class="command">cat /etc/hostname</span></div>
+</li>
+<li>
+<strong>less</strong> / <strong>more</strong> – view file content page by page.
+<div class="example">Example: <span class="command">less /var/log/syslog</span></div>
+</li>
+<li>
+<strong>head</strong> / <strong>tail</strong> – view first/last lines of a file.
+<div class="example">Example: <span class="command">head -n 20 /var/log/syslog</span></div>
+</li>
+<li>
+<strong>grep</strong> – search text patterns.
+<div class="example">Example: <span class="command">grep "error" /var/log/syslog</span></div>
+</li>
+<li>
+<strong>sed</strong> – stream editor for text manipulation.
+<div class="example">Example: <span class="command">sed 's/old/new/g' file.txt</span></div>
+</li>
+<li>
+<strong>awk</strong> – text processing & reporting.
+<div class="example">Example: <span class="command">awk '{print $1}' file.txt</span></div>
+</li>
+<li>
+<strong>sort</strong> – sort lines in text files.
+<div class="example">Example: <span class="command">sort file.txt</span></div>
+</li>
+<li>
+<strong>cut</strong> – extract columns from text.
+<div class="example">Example: <span class="command">cut -d ":" -f1 /etc/passwd</span></div>
+</li>
+<li>
+<strong>wc</strong> – word, line, byte count.
+<div class="example">Example: <span class="command">wc -l file.txt</span></div>
+</li>
+</ul>
+</section>
 
-<script src="script.js"></script>
+<section id="files">
+<h2>Files & Archives</h2>
+<ul>
+<li>
+<strong>tar</strong> – archive files.
+<div class="example"><span class="command">tar -czvf backup.tar.gz /home/user</span></div>
+</li>
+<li>
+<strong>gzip / gunzip</strong> – compress / decompress files.
+<div class="example"><span class="command">gzip file.txt</span></div>
+</li>
+<li>
+<strong>zip / unzip</strong> – zip archives.
+<div class="example"><span class="command">zip archive.zip file1 file2</span></div>
+</li>
+<li>
+<strong>find</strong> – search files in directories.
+<div class="example"><span class="command">find /var/log -name "*.log"</span></div>
+</li>
+<li>
+<strong>locate</strong> – fast file search using database.
+<div class="example"><span class="command">locate nginx.conf</span></div>
+</li>
+<li>
+<strong>du</strong> – disk usage.
+<div class="example"><span class="command">du -sh /home/user</span></div>
+</li>
+<li>
+<strong>df</strong> – disk free space.
+<div class="example"><span class="command">df -h</span></div>
+</li>
+</ul>
+</section>
+
+<section id="process">
+<h2>Processes & Resources</h2>
+<ul>
+<li><strong>top / htop</strong> – live view of processes, CPU, memory usage.</li>
+<li><strong>ps / pstree</strong> – list processes in different formats.</li>
+<li><strong>kill / pkill</strong> – terminate processes by PID or name.</li>
+<li><strong>nice / renice</strong> – set or change process priority.</li>
+<li><strong>free / vmstat / iostat</strong> – monitor memory and I/O.</li>
+</ul>
+</section>
+
+<section id="users">
+<h2>Users & Permissions</h2>
+<ul>
+<li><strong>useradd / usermod / passwd</strong> – add/modify users.</li>
+<li><strong>groupadd / groupmod</strong> – manage groups.</li>
+<li><strong>chmod / chown / chgrp</strong> – permissions & ownership.</li>
+<li><strong>sudo / visudo</strong> – manage admin privileges.</li>
+<li><strong>umask</strong> – default permissions for new files.</li>
+</ul>
+</section>
+
+<section id="network">
+<h2>Network</h2>
+<ul>
+<li><strong>ip / ss / netstat</strong> – view network interfaces, sockets, connections.</li>
+<li><strong>nmcli</strong> – manage network connections.</li>
+<li><strong>ping / traceroute / mtr</strong> – test connectivity.</li>
+<li><strong>dig / host / nslookup</strong> – DNS lookup.</li>
+<li><strong>curl / wget</strong> – fetch URLs and files.</li>
+<li><strong>scp / rsync</strong> – remote copy/sync files.</li>
+<li><strong>nmap</strong> – network scanning.</li>
+</ul>
+</section>
+
+<section id="services">
+<h2>System & Services</h2>
+<ul>
+<li><strong>systemctl / service</strong> – start/stop/manage services.</li>
+<li><strong>journalctl</strong> – view system logs.</li>
+<li><strong>dmesg</strong> – kernel messages.</li>
+<li><strong>reboot / shutdown</strong> – restart or power off system.</li>
+</ul>
+</section>
+
+<section id="storage">
+<h2>Storage & LVM</h2>
+<ul>
+<li><strong>lsblk</strong> – list disks and partitions.</li>
+<li><strong>mount / umount</strong> – mount or unmount filesystem.</li>
+<li><strong>parted / fdisk</strong> – disk partitioning.</li>
+<li><strong>mkfs</strong> – create filesystem.</li>
+<li><strong>fsck</strong> – check filesystem.</li>
+<li><strong>LVM</strong>: pvcreate, vgcreate, lvcreate, lvextend, lvs/vgs/pvs</li>
+</ul>
+</section>
+
+<section id="security">
+<h2>Security</h2>
+<ul>
+<li><strong>fail2ban-client</strong> – monitor and ban suspicious IPs.</li>
+<li><strong>ssh-keygen</strong> – generate SSH keys.</li>
+<li><strong>chage</strong> – password expiry management.</li>
+<li><strong>ufw / firewall-cmd</strong> – firewall management.</li>
+</ul>
+</section>
+
+<section id="logs">
+<h2>Logs & Troubleshooting</h2>
+<ul>
+<li><strong>journalctl</strong> – view system logs.</li>
+<li><strong>tail -f</strong> – follow log files in real-time.</li>
+<li><strong>dmesg</strong> – kernel messages.</li>
+<li><strong>lsof</strong> – list open files.</li>
+<li><strong>strace</strong> – trace system calls.</li>
+<li><strong>tcpdump</strong> – capture network traffic.</li>
+</ul>
+</section>
+
+<section id="devops">
+<h2>DevOps</h2>
+<ul>
+<li><strong>git</strong> – add, commit, push, branch, revert, stash.</li>
+<li><strong>docker</strong> – build, run, exec, logs, ps, stats.</li>
+<li><strong>kubectl</strong> – manage pods, deployments, nodes.</li>
+<li><strong>ansible</strong> – ad-hoc commands, playbooks.</li>
+<li><strong>terraform</strong> – init, plan, apply, destroy.</li>
+</ul>
+</section>
+
+<section id="hpc">
+<h2>HPC Commands</h2>
+<ul>
+<li><strong>squeue</strong> – view jobs in Slurm queue.</li>
+<li><strong>scontrol</strong> – manage Slurm jobs.</li>
+<li><strong>sbatch</strong> – submit batch jobs.</li>
+<li><strong>scancel</strong> – cancel jobs.</li>
+<li><strong>sinfo</strong> – view cluster info.</li>
+<li><strong>sacct</strong> – view accounting of jobs.</li>
+<li><strong>slurmd status check</strong> – check node daemons.</li>
+<li><strong>nfsstat / showmount</strong> – NFS monitoring.</li>
+<li><strong>ibstat / ibv_devinfo</strong> – InfiniBand status.</li>
+</ul>
+</section>
+
+<script>
+// MATRIX EFFECT
+const canvas = document.getElementById("matrixCanvas");
+const ctx = canvas.getContext("2d");
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+const letters = "01";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+let drops = [];
+for (let i = 0; i < columns; i++) drops[i] = 1;
+function drawMatrix() {
+    ctx.fillStyle = "rgba(0,0,0,0.05)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle = "#0F0";
+    ctx.font = fontSize+"px monospace";
+    for(let i=0;i<drops.length;i++){
+        const text = letters[Math.floor(Math.random()*letters.length)];
+        ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+        if(drops[i]*fontSize>canvas.height && Math.random()>0.95) drops[i]=0;
+        drops[i]++;
+    }
+}
+setInterval(drawMatrix,35);
+
+// Smooth scrolling
+document.querySelectorAll("nav a").forEach(anchor=>{
+    anchor.onclick=function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href"))
+        .scrollIntoView({behavior:"smooth"});
+    }
+});
+</script>
 </body>
 </html>
