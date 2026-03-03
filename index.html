@@ -1,39 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navigator — Linux & DevOps Commands</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator – Linux & HPC Command Center</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<canvas id="matrixCanvas"></canvas>
-
 <header>
-  <h1>Navigator</h1>
-  <p>Linux & DevOps Command Explorer</p>
+    <h1>Linux Navigator</h1>
+    <p>Le centre de commandes pour ingénieurs Linux, DevOps & HPC</p>
 
-  <nav>
-    <input type="text" id="searchInput" placeholder="Search command or description...">
-    <select id="categoryFilter">
-      <option value="All">All Categories</option>
-      <option value="Basics">Basics</option>
-      <option value="Files">Files & Directories</option>
-      <option value="Networking">Networking</option>
-      <option value="SSH">SSH & Remote</option>
-      <option value="Monitoring">Process & Monitoring</option>
-      <option value="Text">Text & Filters</option>
-      <option value="Security">Security</option>
-      <option value="DevOps">DevOps / Git</option>
-      <option value="HPC">HPC / Slurm</option>
-    </select>
-  </nav>
+    <input type="text" id="search" placeholder="Rechercher une commande...">
 </header>
 
-<main id="commandsContainer">
-  <!-- Command cards will be inserted here dynamically -->
-</main>
+<section id="commands-container"></section>
+
+<footer>
+    <p>© 2025 – Linux Navigator by Devislemops</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
